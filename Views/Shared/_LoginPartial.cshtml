@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tua pagina</title>
+    <style>
+        /* Stili per il riquadro di saluto */
+        .greeting-box {
+            background-color: #f0f0f0; /* Colore di sfondo del riquadro */
+            padding: 10px; /* Spazio intorno al testo */
+            border-radius: 5px; /* Bordo arrotondato */
+        }
+
+        .greeting-text {
+            color: #333; /* Colore del testo */
+            font-weight: bold; /* Testo in grassetto */
+        }
+
+        /* Modifiche al pulsante Logout */
+        .nav-link.btn {
+            background-color: #007bff; /* Colore di sfondo del pulsante */
+            color: #fff; /* Colore del testo */
+            border-color: #007bff; /* Colore del bordo */
+        }
+
+            .nav-link.btn:hover {
+                background-color: #0056b3; /* Colore di sfondo del pulsante al passaggio del mouse */
+                border-color: #0056b3; /* Colore del bordo al passaggio del mouse */
+            }
+
+        /* Stili per i link di registrazione e accesso */
+        .auth-link {
+            color: #007bff; /* Colore del testo */
+            text-decoration: none; /* Nessun sottolineato */
+            font-weight: bold; /* Testo in grassetto */
+            margin-right: 10px; /* Spazio tra i link */
+        }
+
+            .auth-link:hover {
+                text-decoration: underline; /* Sottolinea il testo al passaggio del mouse */
+            }
+    </style>
+</head>
+<body>
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item">
+                <div class="greeting-box">
+                    <span class="greeting-text">Ciao @User.Identity?.Name!</span>
+                </div>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-dark">🔙 Logout</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="auth-link" asp-area="Identity" asp-page="/Account/Register">Crea un account</a>
+            </li>
+            <li class="nav-item">
+                <a class="auth-link" asp-area="Identity" asp-page="/Account/Login">Accedi</a>
+            </li>
+        }
+    </ul>
+</body>
+</html>

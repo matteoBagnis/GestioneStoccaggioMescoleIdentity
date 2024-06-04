@@ -1,0 +1,79 @@
+﻿@model GestioneStoccaggioMescoleIdentity.Models.Cliente
+
+@{
+    ViewData["Title"] = "Dettagli";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        /* Stili per la pagina */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .bg-secondary {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dettagli</h1>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <td>@Html.DisplayFor(model => model.Nome)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Cognome)</th>
+                <td>@Html.DisplayFor(model => model.Cognome)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IDRuotaRichiesta)</th>
+                <td>@Html.DisplayFor(model => model.IDRuotaRichiesta)</td>
+            </tr>
+        </table>
+        <div class="bg-secondary">
+            <a asp-action="Index" style="color: white;">⬅️ Ritorna alla lista</a>
+        </div>
+    </div>
+</body>
+</html>

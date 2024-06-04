@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assicurati di specificare il layout desiderato
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    h1 {
+        color: #007bff;
+        margin-bottom: 20px;
+        text-align: center; /* Centrato il testo */
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .btn-custom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .btn-admin {
+        display: block;
+        margin-top: 20px; /* Aggiunto un margine superiore */
+        margin-bottom: 20px; /* Aggiunto un margine inferiore */
+        width: 100%;
+    }
+
+    /* Riquadri colorati */
+    .box {
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px; /* Aggiunto un margine inferiore */
+    }
+
+    /* Linee divisorie */
+    .divider {
+        border-bottom: 10px solid #000; /* Colore nero */
+        margin-bottom: 20px; /* Spazio dopo la linea */
+    }
+
+    /* Stile per il button rosso chiaro */
+    .btn-custom-red {
+        background-color: #ff5f5f;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        L'applicazione è stata sviluppata con lo scopo di gestire in modo completo ed efficace il processo di stoccaggio delle mescole utilizzate nell'industria della gomma. Il suo obiettivo principale è garantire un'organizzazione efficiente e sicura delle informazioni relative alle mescole e ai clienti che ne fanno richiesta.
+    </p>
+
+    <p>
+        Per cominciare, l'applicazione offre una pagina di Login e Registrazione che permette agli utenti registrati di accedere in modo sicuro, garantendo al contempo che solo gli utenti autorizzati possano accedere alle funzionalità dell'applicazione. Questo sistema di autenticazione è fondamentale per proteggere i dati sensibili e impedire accessi non autorizzati.
+    </p>
+
+    <p>
+        L'Home Page dell'applicazione offre una panoramica generale di tutte le funzionalità presenti nell'applicazione con le relative descrizioni.
+    </p>
+    <a href="https://localhost:44361/Home/Ricetta" class="btn btn-success btn-custom">Visualizza ricetta per realizzazione delle mescole</a>
+    <div class="divider"></div> <!-- Linea divisoria -->
+
+    <h2 class="box">Gestione delle Mescole</h2>
+    <p>
+        La Gestione delle Mescole è una delle funzionalità centrali dell'applicazione, consentendo agli utenti tramite una tabella di:
+    </p>
+    <ul>
+        <li>aggiungere alla lista le mescole che, dopo esser state prodotte, sono disponibili per la vendita ai clienti di altre aziende;</li>
+        <li>visualizzare le mescole e i rispettivi dati per poter avere una panoramica generale dell’andamento della stoccaggio;</li>
+        <li>modificare i dati delle mescole nel caso in cui, durante la stoccaggio, ci sia stato un errore nella registrazione dei dati della mescola stessa;</li>
+        <li>rimuovere una mescola dalla tabella in seguito all'acquisto da parte del cliente interessato;</li>
+    </ul>
+    <p>
+        Questo modulo permette quindi di specificare dettagli importanti come l'ID della mescola, la sua descrizione, la data di produzione e il prezzo, offrendo agli utenti un controllo completo sulle mescole disponibili e sulle loro informazioni.
+    </p>
+    <a href="https://localhost:44361/Mescola" class="btn btn-info btn-custom">Vai alla gestione delle mescole</a>
+    <div class="divider"></div> <!-- Linea divisoria -->
+
+    <h2 class="box">Gestione dei Clienti</h2>
+    <p>
+        Allo stesso modo, nella Gestione dei Clienti è possibile:
+    </p>
+    <ol>
+        <li>aggiungere clienti di un'altra azienda che si mostrano interessati all'acquisto di una specifica mescola</li>
+        <li>visualizzare i rispettivi dati del cliente come ID, nome, cognome, email e Id della mescola interessata</li>
+        <li>modificare i dati dei clienti</li>
+        <li>rimuovere il cliente dell'azienda richiedente una volta che ha ricevuto la mescola interessata;</li>
+    </ol>
+    <a href="https://localhost:44361/Cliente" class="btn btn-custom-red btn-custom">Vai alla gestione dei clienti</a>
+    <div class="divider"></div> <!-- Linea divisoria -->
+
+    <h2 class="box">Contatti</h2>
+    <p>
+        In seguito è riportato il button per poter accedere alla pagina di visualizzazione contatti :
+    </p>
+
+    <!-- Aggiunta del button per visualizzare i contatti dell'amministratore -->
+    <a href="https://localhost:44361/Home/Contatti" class="btn btn-warning btn-admin">Visualizza contatti amministratore</a>
+</div>

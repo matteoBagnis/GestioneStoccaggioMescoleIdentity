@@ -1,0 +1,74 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Accedi";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+        <section>
+            <form id="account" method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="nome@example.com" />
+                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3 position-relative">
+                    <input asp-for="Input.Password" id="Input_Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" class="form-label">Password</label>
+                    <button type="button" class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y" id="togglePassword">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" alt="Mostra password" style="width: 20px; height: auto;">
+                    </button>
+
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        Ricordami?
+                    </label>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Accedi</button>
+                </div>
+                <br /> <br> 
+                <div class="mb-3">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Hai dimenticato la password?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrati come nuovo utente</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Rinvia conferma email</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            var passwordField = document.getElementById('Input_Password');
+            var icon = this.querySelector('i');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            }
+        });
+    </script>
+}

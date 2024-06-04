@@ -1,0 +1,71 @@
+﻿@model MvcMovie.Models.Mescola
+
+@{
+    ViewData["Title"] = "Dettagli";
+}
+
+<style>
+    /* Stili per la pagina */
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: #007bff;
+        text-align: center;
+    }
+
+    dl {
+        width: 60%; /* Allargato leggermente per evitare troncamenti */
+        margin: 0 auto;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    dt,
+    dd {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+        white-space: normal; /* Per garantire che il testo non venga troncato */
+    }
+
+    dt {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            text-decoration: none;
+        }
+
+</style>
+
+<h1>Dettagli</h1>
+
+<div>
+    <dl class="row">
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descrizione)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Descrizione)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DataProduzione)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.DataProduzione)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Prezzo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Prezzo)</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">⬅️ Torna alla lista</a>
+</div>

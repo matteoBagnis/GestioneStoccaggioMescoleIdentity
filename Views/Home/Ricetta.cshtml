@@ -1,0 +1,96 @@
+﻿i: @{
+    ViewData["Title"] = "Ricetta delle Mescole";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assicurati di specificare il layout desiderato
+}
+
+<style>
+    /* Stili CSS */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #007bff;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin-bottom: 15px;
+    }
+
+        ul li {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+    /* Stili per il button */
+    .btn {
+        text-align: center;
+        background-color: #6c757d; /* Grigio come gli altri bottoni */
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /* Allineamento del button al centro */
+    .btn-container {
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        Di seguito è riportata la ricetta delle mescole utilizzate nel processo di produzione:
+    </p>
+
+    <h3>Formulazione della Ricetta:</h3>
+    <ul>
+        <li>Selezione dei materiali base</li>
+        <li>Combinazione di polimeri, additivi e agenti chimici</li>
+    </ul>
+
+    <h3>Miscelazione dei Materiali:</h3>
+    <ul>
+        <li>Utilizzo di mescolatori interni o estrusi</li>
+        <li>Distribuzione uniforme dei componenti</li>
+    </ul>
+
+    <h3>Processo di Cottura:</h3>
+    <ul>
+        <li>Inserimento in stampi o processi di estrusione</li>
+        <li>Cottura controllata in forni o presse riscaldati</li>
+    </ul>
+
+    <h3>Raffreddamento e Finitura:</h3>
+    <ul>
+        <li>Raffreddamento dei prodotti finiti</li>
+        <li>Processi di finitura e ispezione</li>
+    </ul>
+
+    <!-- Aggiunta del button per tornare alla Home Page -->
+    <div class="btn-container">
+        <a href="@Url.Action("Index", "Home")" class="btn">⬅️ Torna indietro</a>
+    </div>
+</div>

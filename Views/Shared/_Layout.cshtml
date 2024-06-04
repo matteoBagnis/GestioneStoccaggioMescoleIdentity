@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* Stili personalizzati */
+        .navbar-brand {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+            .navbar-brand:hover {
+                color: #0056b3;
+            }
+
+        .nav-link {
+            color: #333;
+            font-weight: bold;
+        }
+
+            .nav-link:hover {
+                color: #0056b3;
+            }
+
+        .navbar-collapse {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #007bff;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding: 20px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+            .footer a {
+                color: #007bff;
+                font-weight: bold;
+            }
+
+                .footer a:hover {
+                    color: #0056b3;
+                }
+
+        /* Nuovi stili per il riquadro */
+        .app-title {
+            background-color: #b0e0e6; /* RAL 3067 - Verde pastello */
+            color: #ffffff; /* Testo bianco */
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Stili per l'identity */
+        .navbar-nav .nav-item {
+            margin-left: 10px;
+        }
+
+        .account-icon {
+            margin-right: 5px;
+        }
+
+        /* Personalizzazione per Register e Login */
+        .register-link, .login-link {
+            color: #28a745;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+            .register-link:hover, .login-link:hover {
+                text-decoration: underline;
+                background-color: #e8f5e9;
+            }
+
+    </style>
+</head>
+<body>
+    <!-- Riquadro dell'applicazione -->
+    <div class="container">
+        <div class="app-title">
+            <h1>Applicazione per Stoccaggio delle Mescole</h1>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - App Gestione Mescole - <a asp-area="" asp-controller="Home" asp-action="Privacy">Informazioni sulla Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

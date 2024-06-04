@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assicurati di specificare il layout desiderato
+}
+
+<style>
+    /* Stili CSS */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        La privacy dei nostri utenti è di fondamentale importanza per noi. Riconosciamo il valore dei dati personali e ci impegniamo a proteggere e rispettare la tua privacy quando utilizzi la nostra applicazione.
+    </p>
+
+    <p>
+        È importante per noi garantire che le informazioni personali degli utenti siano trattate in modo sicuro e conforme alle leggi sulla privacy vigenti. Ci impegniamo a proteggere la tua privacy fornendo controlli trasparenti su come vengono raccolti, utilizzati e condivisi i tuoi dati personali.
+    </p>
+
+    <p>
+        La tua fiducia è la nostra priorità e lavoriamo duramente per proteggere le tue informazioni personali. Utilizziamo misure di sicurezza appropriate per proteggere i tuoi dati personali da accessi non autorizzati, modifiche o divulgazioni non autorizzate.
+    </p>
+
+    <!-- Aggiunta del button per tornare alla Home Page -->
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">⬅️ Torna indietro</a>
+</div>
